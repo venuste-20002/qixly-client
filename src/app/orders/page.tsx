@@ -8,7 +8,7 @@ import { useGetUserSalesItems } from "../_actions/useGetSalesItems";
 import React, { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import ImageShow from "@/components/ImageShow";
-import { GetImage } from "@/utils/getImages";
+import { useGetImage } from "@/utils/getImages";
 import GetPagination from "@/components/Pagination";
 import setNewParams from "@/helper/useChangeParams";
 import {
@@ -47,7 +47,7 @@ interface SalesItemProps {
  * */
 function SalesItem({ id, name, price, status, image }: SalesItemProps) {
   const router:AppRouterInstance = useRouter();
-  const generateImage: string = GetImage(image);
+  const generateImage: string = useGetImage(image);
 
   useEffect(() => {
     return () => {

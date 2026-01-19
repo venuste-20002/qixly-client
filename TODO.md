@@ -1,0 +1,2 @@
+- [ ] Modify qixly-client/src/utils/getImages.tsx to export useGetImage as a hook
+- [ ] Update qixly-client/src/app/payments/[id]/page.tsx to use the hook in SalesItems

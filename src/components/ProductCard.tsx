@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useEffect } from "react";
-import { GetImage } from "@/utils/getImages";
+import { useGetImage } from "@/utils/getImages";
 import ImageShow from "@/components/ImageShow";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { useRouter } from "next/navigation";
@@ -47,7 +47,7 @@ export function ProductCard({
   expiryDate,
   startPrice,
 }: ProductCardProps) {
-  const imageUrl: string = GetImage(image);
+  const imageUrl: string = useGetImage(image);
   const router = useRouter();
 
   useEffect(() => {
@@ -131,7 +131,7 @@ export function ProductCardOne({
   institutionName,
   expiryDate,
 }: ProductCardOneProps) {
-  const imageUrl: string = GetImage(image);
+  const imageUrl: string = useGetImage(image);
   const router = useRouter();
 
   useEffect(() => {

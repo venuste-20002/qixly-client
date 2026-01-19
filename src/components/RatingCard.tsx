@@ -28,7 +28,7 @@ export default function RatingCard() {
           </div>
           <div className="flex flex-col items-center -mt-8">
             <div className="relative w-16 h-16 rounded-full bg-[#FFB800] flex items-center justify-center border-4 border-white">
-              <span className="text-white text-xl">{data ? data.name.charAt(0) : ''}</span>
+              <span className="text-white text-xl">{data?.[0]?.name?.charAt(0) || ''}</span>
 
               <div className="absolute bottom-0 right-0 w-4 h-4 bg-white rounded-full flex items-center justify-center">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -40,8 +40,8 @@ export default function RatingCard() {
         </CardHeader>
         <CardContent className="text-center pt-4 space-y-4">
           <div className="space-y-1">
-            <h2 className="font-semibold text-xl">{data?.name || 'Loading...'}</h2>
-            <p className="text-sm text-muted-foreground">{data?.address || 'Loading...'}</p>
+            <h2 className="font-semibold text-xl">{data?.[0]?.name || 'Loading...'}</h2>
+            <p className="text-sm text-muted-foreground">{data?.[0]?.address || 'Loading...'}</p>
             <Badge variant="secondary" className="bg-green-50 text-green-600 hover:bg-green-50">
               ● Verified
             </Badge>

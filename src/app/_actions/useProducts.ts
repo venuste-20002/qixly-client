@@ -71,7 +71,7 @@ export async function getCardsImages(
   id: string,
 ): Promise<{ status: string; data: any }> {
   const cardImage: Response = await fetch(
-    `${process.env.BASE_BACKEND_URL}/resources/${id}`,
+    `${process.env.BASE_BACKEND_URL}resources/${id}`,
     {
       headers: {
         Accept: "image/*",

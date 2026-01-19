@@ -8,7 +8,7 @@ import { getSingleTransaction } from "@/app/_actions/useTransactions";
 import ImageShow from "@/components/ImageShow";
 import { Badge } from "@/components/ui/badge";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
-import { GetImage } from "@/utils/getImages";
+import { useGetImage } from "@/utils/getImages";
 import PaymentSinglePageSkeleton from "@/components/skeletons/PaymentSinglePageSkeleton";
 import { statusColors, statusColorsText } from "@/utils/statusColors";
 
@@ -44,12 +44,12 @@ function SalesItems({
   status,
   id,
 }: SalesItemProps) {
-  const getImage: string = GetImage(image);
+  const getImage: string = useGetImage(image);
   const router: AppRouterInstance = useRouter();
   return (
     <div className={"flex items-center justify-between"}>
       <div className="relative w-[100px] h-[100px] rounded-2xl border">
-        <ImageShow src={getImage || "/icon.svg"} alt={"Card Image"} fill />
+        <ImageShow src={getImage} alt={"Card Image"} fill />
       </div>
       <div>
         <p className={"font-bold text-xl capitalize"}>{name}</p>

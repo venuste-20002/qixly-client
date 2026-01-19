@@ -3,23 +3,23 @@
 import { useQuery } from "@tanstack/react-query";
 import { getCardsImages } from "@/app/_actions/useProducts";
 
-export function GetImage(image: string): string {
+export function useGetImage(image: string): string {
   /*
-   * @Mutate get product image
+   * @Hook get product image
    * @description Fetch product image
-   * @param name {string} The name of the product
-   * @return onSuccess {data: {status: string; data: any}}
+   * @param image {string} The image identifier
+   * @return {string} The image URL or undefined if not loaded
    * */
-  const getProductImage = useQuery({
+  const { data: imageUrl } = useQuery({
     queryKey: ["image", image],
     queryFn: async () => {
       const data = await getCardsImages(image);
       if (data.status === "success") {
-        const imageUrl: string = URL.createObjectURL(data.data);
-        return imageUrl;
+        return URL.createObjectURL(data.data);
       }
+      return null;
     },
     staleTime: 0,
   });
-  return getProductImage.data as string;
+  return imageUrl || "/icon.svg";
 }

@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { MouseEvent, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { GetImage } from "@/utils/getImages";
+import { useGetImage } from "@/utils/getImages";
 import ImageShow from "@/components/ImageShow";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 
@@ -52,7 +52,7 @@ function GetColor() {
 
 export default function Shops({ id, name, image }: ShopsInterface) {
   const router: AppRouterInstance = useRouter();
-  const imageUrl: string = GetImage(image);
+  const imageUrl: string = useGetImage(image);
   const cardColor: string = GetColor();
 
   const handleGotoShop = (id: string) => (e: MouseEvent) => {
