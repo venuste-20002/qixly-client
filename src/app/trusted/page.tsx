@@ -14,14 +14,6 @@ export default function Trusted({
   searchParams: Promise<{ key: string }>;
 }) {
   const router = useRouter();
-
-  /*
-   * Mutation to authenticate trusted services
-   * @param {string} params
-   * @return onSuccess Redirect to home page and store token
-   * @return onError show toast message
-   * @return onError Redirect to home page
-   * */
   const { mutate, isPending } = useMutation({
     mutationFn: async (params: string) => {
       return await trustedServices(params!);

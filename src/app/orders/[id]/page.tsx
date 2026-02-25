@@ -21,9 +21,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import SinglePageLayout from "@/components/SinglePageLayout";
 import { date } from "zod";
 
-/*
- * viewqrfull component
- */
+
 function ViewQrFull({ image }: { image: string }) {
   return (
     <>
@@ -51,17 +49,12 @@ function ViewQrFull({ image }: { image: string }) {
   );
 }
 
-/*
- * sales Item status
- **/
+
 const SaleItemStatus = {
   USED: "USED",
   UNUSED: "UNUSED",
 };
 
-/*
- * Get Usage Time
- */
 function getUsageTime(created_time: string, usage_days: number): Date {
   const dateCreateAt = new Date(created_time);
   return new Date(dateCreateAt.getTime() + usage_days * 24 * 60 * 60 * 1000);
@@ -99,25 +92,16 @@ export default function SingleOrderPage() {
       const fileBlob = new Blob([data?.data.file], { type: "application/pdf" });
       const url = window.URL.createObjectURL(fileBlob);
 
-      // create an anchor to download
       const link = document.createElement("a");
       link.href = url;
       link.download = data?.data?.fileName;
       document.body.appendChild(link);
-
-      // start to download
       link.click();
-
-      // Remove the anchor tag
       document.body.removeChild(link);
       window.URL.revokeObjectURL(url);
     },
   });
 
-  /*
-   * @DownloadPdf
-   * @description Function to invoke the pdf download
-   * */
   function DownloadPdf() {
     useDownloadFilePdf.mutate({ id: params.id });
   }

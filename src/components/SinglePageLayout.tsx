@@ -5,12 +5,7 @@ import HeaderImage from "@/components/HeaderImageCarousel";
 import { Badge } from "@/components/ui/badge";
 import { AlarmClock, MapPin } from "lucide-react";
 
-/*
- * calculate time left
- * this calculates the time left to the expiry date
- * @params expiry_date string
- * @return {days:number, hours: number: minutes:number, seconds:number}
- * */
+
 function calculateTimeLeft(expiry_date: Date): {
   days: number;
   hours: number;
@@ -33,10 +28,7 @@ function calculateTimeLeft(expiry_date: Date): {
   return { days, hours, minutes, seconds };
 }
 
-/*
- * ExpireDateTimer
- * @description this show the amount of time left to the expiration of the card
- */
+
 const ExpireDateTimer: React.FC<{ expiry: Date }> = ({
   expiry,
 }: {
@@ -93,15 +85,6 @@ const ExpireDateTimer: React.FC<{ expiry: Date }> = ({
   );
 };
 
-/*
- * SinglePage layout props
- * @params start_data string
- * @params expiry_date string
- * @params institution string institution name
- * @params name string name of variant
- * @params children
- * @params image string[] image array
- * */
 interface SinglePageLayoutProps {
   start_date: string;
   expiry_date: Date;

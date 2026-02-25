@@ -36,10 +36,7 @@ export default function ShopsPage() {
     search: debouncedSearch,
   });
 
-  /*
-   * @debounceUseSearch
-   * @description Debounce search
-   * */
+  
   const debounceUseSearch = useCallback(
     debounce((search: string) => {
       setDebouncedSearch(search);
@@ -48,11 +45,6 @@ export default function ShopsPage() {
     [setDebouncedSearch, searchParams, pathname, router],
   );
 
-  /*
-   * @handleSearch
-   * @description Handle search
-   * @param e {React.ChangeEvent<HTMLInputElement>} The event
-   **/
   function handleSearch(e: React.ChangeEvent<HTMLInputElement>) {
     e.preventDefault();
     const newVal: string = e.target.value;
@@ -60,11 +52,6 @@ export default function ShopsPage() {
     debounceUseSearch(newVal);
   }
 
-  /*
-   * @handlePagination
-   * @description Handle pagination
-   * @param page {number} The page
-   * */
   const handlePagination: (
     page: number,
   ) => (e: React.MouseEvent<Element, MouseEvent>) => void =

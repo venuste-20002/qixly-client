@@ -15,9 +15,6 @@ import setNewParams from "@/helper/useChangeParams";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { statusColors, statusColorsText } from "@/utils/statusColors";
 
-/*
- * The formatDate function
- * */
 function formatDate(date: Date) {
   const newDate = new Date(date);
   return new Intl.DateTimeFormat("en-GB", {
@@ -27,9 +24,6 @@ function formatDate(date: Date) {
   }).format(newDate);
 }
 
-/*
- * The Previous payments props
- * */
 interface PreviousPaymentProps {
   id: string;
   timestamp: Date;
@@ -39,9 +33,6 @@ interface PreviousPaymentProps {
   price: number;
 }
 
-/*
- * The Previous payments  component
- * */
 function PreviousPayment({
   id,
   timestamp,
@@ -75,9 +66,6 @@ function PreviousPayment({
   );
 }
 
-/*
- * The Previous payments  skeleton component
- * */
 function PreviousPaymentsSkeleton() {
   return (
     <div className={"flex items-center gap-14"}>
@@ -94,15 +82,6 @@ function PreviousPaymentsSkeleton() {
   );
 }
 
-/*
- * The Recent payments props
- * params id: string
- * params amount: number
- * params timestamp: Date
- * params number: string
- * params status: string
- * params quantity: number
- * */
 interface RecentPaymentProps {
   id: string;
   amount: number;
@@ -112,9 +91,6 @@ interface RecentPaymentProps {
   quantity: number;
 }
 
-/*
- * The Recent payments component
- * */
 function RecentPayments({
   id,
   amount,
@@ -162,9 +138,6 @@ function RecentPayments({
   );
 }
 
-/*
- * The Payment props
- * */
 interface PaymentProps {
   id: string;
   phone_number: string;
@@ -177,9 +150,6 @@ interface PaymentProps {
   };
 }
 
-/*
- * The Recent payments skeleton component
- * */
 function RecentPaymentsSkeleton() {
   return (
     <Card

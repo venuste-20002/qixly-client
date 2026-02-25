@@ -37,7 +37,7 @@ export async function verificationAction(
   id: string,
 ) {
   try {
-    const res: any = await request.post(`/auth/verify-token/${id}`, payload); // Send JSON
+    const res: any = await request.post(`/auth/verify-token/${id}`, payload);
     return { status: "success", data: res?.data };
   } catch (error: any) {
     return { status: "error", data: error?.response?.data };
@@ -46,7 +46,7 @@ export async function verificationAction(
 
 export async function resendTokenAction(email: string) {
   try {
-    const res: any = await request.post(`/auth/resend-token`, { email }); // Send email for token resend
+    const res: any = await request.post(`/auth/resend-token`, { email });
     return { status: "success", data: res?.data };
   } catch (error: any) {
     return { status: "error", data: error?.response?.data };
@@ -56,24 +56,12 @@ export async function googleRedirect() {
   return redirect(`${process.env.BASE_BACKEND_URL}/auth/google`);
 }
 
-/*
- * Trusted Services Return
- * @param { status: string, message: string }
- * @param { status: string, data: any }
- * */
 interface trustedServiceReturn<T> {
   status: "success" | "error";
   message?: string;
   data?: T;
 }
 
-/*
- * Trusted Services
- * This function is used to authenticate a user from a trusted service
- * @param key: string
- * @returns { status: string, message: string }
- * @returns { status: string, data: any }
- * */
 export async function trustedServices<T>(
   key: string,
 ): Promise<trustedServiceReturn<T>> {
@@ -86,11 +74,6 @@ export async function trustedServices<T>(
   }
 }
 
-/*
- * logout user
- * this function logs out the user, deletes the user and localstorage
- * @return {status:string}
- * */
 export async function logoutUser() {
   const cookie = await cookies();
   cookie.delete("token");

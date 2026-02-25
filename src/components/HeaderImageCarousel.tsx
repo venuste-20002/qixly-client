@@ -19,7 +19,7 @@ export default function HeaderImage({ image }: { image: string[] }) {
                 {/*</Badge>*/}
             </div>
             {/* Image */}
-            {!image ? (
+            {!image || image.length === 0 ? (
                 <div className="w-full h-full">
                     <Skeleton className="w-full h-full" />
                 </div>

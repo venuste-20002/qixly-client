@@ -19,15 +19,7 @@ import SalesItemSkeleton from "@/components/skeletons/SalesItemSkeleton";
 import { Badge } from "@/components/ui/badge";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 
-/*
- * SalesItem
- * @description this is a single sales item card
- * @param name string
- * @param price number
- * @param institution string
- * @param status string
- * @return JSX.Element
- * */
+
 interface SalesItemProps {
   id?: string;
   name: string;
@@ -36,15 +28,7 @@ interface SalesItemProps {
   image: string;
 }
 
-/*
- * SalesItem
- * @description this is a single sales item card
- * @param name string
- * @param price number
- * @param institution string
- * @param status string
- * @return JSX.Element
- * */
+
 function SalesItem({ id, name, price, status, image }: SalesItemProps) {
   const router:AppRouterInstance = useRouter();
   const generateImage: string = useGetImage(image);
@@ -116,12 +100,7 @@ export default function OrdersPage() {
     setIsReady(true);
   }, []);
 
-  /*
-   * @handlePageChange
-   * @description Handle page change
-   * @param currentPage {number} The current page
-   * @return {void}
-   * */
+  
   const handlePageChange = (currentPage: number) => (e: React.MouseEvent) => {
     e.preventDefault();
     setNewParams("page", `${currentPage}`, searchParams, pathname, router);

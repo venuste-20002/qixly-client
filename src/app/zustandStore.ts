@@ -4,7 +4,6 @@ import { getUserProfile } from "@/app/_actions/useAuth";
 export const useInitStore = create((set) => ({
   count: 0,
   add: () => set((state: any) => ({ count: state.count + 1 })),
-  // remove: () => set((state: any) => ({ count: state.count - 1 })),
 }));
 
 interface  userProfile {

@@ -28,14 +28,6 @@ interface SalesItemProps {
   id: string;
 }
 
-/*
- * @SalesItems
- * @image: string
- * @name: string
- * @id:string
- * @category: string
- * @price: string
- * */
 function SalesItems({
   image,
   name,

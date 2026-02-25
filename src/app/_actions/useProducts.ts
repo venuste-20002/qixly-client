@@ -81,11 +81,7 @@ export async function getCardsImages(
   return { status: "success", data: await cardImage.blob() };
 }
 
-/*
- * getQrCodeImage
- * @param sales_id {string} sales item id
- * @return {status:string;data:any}
- * */
+
 export async function getQrCodeImage({
   sales_id,
 }: {
@@ -173,23 +169,12 @@ export async function removeCartItemfromCart({
   const cart: { data: any } = await request.delete(`/carts/me/${id}`);
   return { status: "success", data: cart?.data };
 }
-
-/*
- * @updateCartItemProps
- * @param id {string} The id of the card
- * @param quantity {number} The quantity of the card
- * */
+ 
 interface updateCartItemProps {
   id: string;
   quantity: number;
 }
 
-/*
- * @updateCartItem
- * @param id {string} The id of the card
- * @param quantity {number} The quantity of the card
- * @return {status: string; data: any}
- * */
 export async function updateCartItem({
   id,
   quantity,

@@ -7,12 +7,6 @@ interface SalesRequest {
   coupon_codes: string[];
 }
 
-/*
- * @useSales
- * @description Send sales data to the cart API
- * @param data {SalesRequest} The sales data to send
- * @return {status: string; data: any}
- * */
 export async function useSales(data: SalesRequest):
  Promise<{ status: string; data: any }> {
   try {
