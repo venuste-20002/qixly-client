@@ -6,15 +6,6 @@ import {
 } from "@/components/ui/pagination";
 import React from "react";
 
-
-/*
- * @GetPaginationProps
- * @description Get pagination props
- * @param page {number} The page
- * @param perPage {number} The per page
- * @param totalPages {number} The total pages
- * @param handlePageChange {Function} The handle page change
- * */
 interface GetPaginationProps {
   page: number;
   perPage: number;
@@ -22,11 +13,6 @@ interface GetPaginationProps {
   handlePageChange: (page: number) => (e: React.MouseEvent) => void;
 }
 
-/*
- * @GetPagination
- * @description Get pagination
- * @param totalPages {number} The total pages
- * */
 export default function GetPagination({
   page,
   totalPages,

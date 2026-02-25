@@ -2,23 +2,13 @@ import { Search } from "lucide-react";
 import { Input } from "./ui/input";
 import React from 'react'
 
-/*
- * SignupInputProps
- * @placeholder: string
- * @value: T
- * @onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
- */
+
 interface SignupInputProps<T extends string | number> {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   value?: T;
 }
 
-/*
- * SearchInput
- * @description Search input component
- * @param placeholder {string} The placeholder of the input
- * */
 export default function SearchInput<T extends string | number>({
   onChange,
   placeholder,

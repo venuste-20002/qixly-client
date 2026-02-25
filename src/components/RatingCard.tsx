@@ -19,12 +19,7 @@ export default function RatingCard() {
       <Card className="border-0 shadow-none">
         <CardHeader className="p-0">
           <div className="relative w-full h-48 rounded-t-lg overflow-hidden bg-black">
-            {/* <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-05%20151408-PGpS5MgdOjsePbbgZbiKEcRxCIBVMy.png"
-              alt="Restaurant interior"
-              fill
-              className="object-cover"
-            /> */}
+            {}
           </div>
           <div className="flex flex-col items-center -mt-8">
             <div className="relative w-16 h-16 rounded-full bg-[#FFB800] flex items-center justify-center border-4 border-white">

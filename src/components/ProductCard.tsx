@@ -6,26 +6,11 @@ import ImageShow from "@/components/ImageShow";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { useRouter } from "next/navigation";
 
-/*
- * @Goto card
- * @description Handle category change
- * @param id {string} The id of the card
- * @return {TSX.Element}
- * */
+
 function handleGotoCard(id: string, router: AppRouterInstance) {
   router.push(`/cards/${id}`);
 }
 
-/*
- * @ProductCardProps
- * @description The props for the ProductCard
- * @name {string} The name of the product
- * @image {string} The image of the product
- * @institutionName {string} The name of the institution
- * @expiryDate {string} The expiry date of the product
- * @startPrice {string} The starting price of the product
- * @return {TSX.Element}
- **/
 interface ProductCardProps {
   id: string;
   name: string;
@@ -35,10 +20,7 @@ interface ProductCardProps {
   startPrice: number;
 }
 
-/*
- * @ProductCard
- * @return {TSX.Element}
- * */
+
 export function ProductCard({
   id,
   name,

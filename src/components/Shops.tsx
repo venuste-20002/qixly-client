@@ -21,22 +21,12 @@ export function ShopsSkeleton() {
   );
 }
 
-/*
- * ShopsInterface
- * @id: string
- * @name: string
- * @image: string
- * */
 interface ShopsInterface {
   id: string;
   name: string;
   image: string;
 }
 
-/*
- * Get Color
- * @description function to get various color
- * */
 function GetColor() {
   const colors: string[] = [
     "rgba(202,80,3,0.29)",
