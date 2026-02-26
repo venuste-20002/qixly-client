@@ -3,10 +3,6 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useRouter } from "next/navigation";
 import {MouseEvent} from "react";
 
-/*
- * @CategoriesButtonSkeleton
- * @return {TSX.Element}
- * */
 export function CategoriesButtonSkeleton() {
   return (
     <div className={"category_container h-[120px] gap-4"}>
@@ -20,29 +16,14 @@ export function CategoriesButtonSkeleton() {
   );
 }
 
-/*
- * @CategoriesButtonProps
- * @param id {string} The id of the category
- * @param name {string} The name of the category
- * */
 interface categoriesButtonProps {
   id?: string;
   name: string;
 }
 
-/*
- * @CategoriesButton
- * @return {TSX.Element}
- **/
 export default function CategoriesButton({ id, name }: categoriesButtonProps) {
   const router = useRouter();
 
-  /*
-   * @CategoriesButton
-   * @description Handle category change
-   * @param id {string} The id of the category
-   * @return {TSX.Element}
-   * */
   const handleGotoCategory = (id: string) => (e: MouseEvent) => {
     e.preventDefault();
     router.push(`/cards?categories=${id}`);

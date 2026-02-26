@@ -17,34 +17,18 @@ import { useMutation } from "@tanstack/react-query";
 import { logoutUser } from "@/app/_actions/useAuth";
 import { showToast } from "@/helper/toast";
 
-/*
- * @Links Interface
- * @param {React.ComponentType<{ className?: string }>} icon
- * @param {string} name
- * @return {TSX.Element}
- * */
 interface LinksProps {
   icon: string;
   name: string;
   link: string;
 }
 
-/*
- * @SideBar Interface
- * @param {boolean} open
- * @param {(open: boolean) => void} onChange
- * @return {TSX.Element}
- * */
 interface SideBarProps {
   open: boolean;
   onChange: (open: boolean) => void;
 }
 
-/*
- * @SideBar
- * @param {SideBarProps} { open, onChange }
- * @return {TSX.Element}
- * */
+
 export default function SideNavbar({ open, onChange }: SideBarProps) {
   const router = useRouter();
 
@@ -56,11 +40,6 @@ export default function SideNavbar({ open, onChange }: SideBarProps) {
     user = JSON.parse(localStorage.getItem("user")!);
   }
 
-  /*
-   * @Links
-   * @param {LinksProps} { icon, name }
-   * @return {TSX.Element}
-   * */
   function Links({ icon: Icon, name, link }: LinksProps) {
     const pathname: string = usePathname();
     return (
