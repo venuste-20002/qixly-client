@@ -17,13 +17,11 @@ export default function VerificationCode() {
       updatedCode[index] = value;
       setCode(updatedCode);
 
-      // Auto-submit when all 6 digits are filled
       if (updatedCode.every((digit) => digit !== '')) {
         const verificationCode = updatedCode.join('');
         handleVerification({token: verificationCode });
       }
 
-      // Move focus to the next input
       if (value && index < 5) {
         const nextInput = document.getElementById(`code-${index + 1}`) as HTMLInputElement;
         nextInput?.focus();

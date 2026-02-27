@@ -9,7 +9,6 @@ import {
 import { initReducer } from "./slices/initSlice.slices";
 
 const rootReducer = combineReducers({
-  // add reducers here
   init: initReducer,
 });
 
