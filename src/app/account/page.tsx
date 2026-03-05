@@ -7,22 +7,11 @@ import { useRouter } from "next/navigation";
 import ImageShow from "@/components/ImageShow";
 import { Card } from "@/components/ui/card";
 
-/*
- * @UserInfo Interface
- * @param {string} label
- * @param {string} value
- * @return {TSX.Element}
- * */
 interface UserInfoProps {
   label: string;
   value: string;
 }
 
-/*
- * @UserInfo
- * @param {UserInfoProps} { label, value }
- * @return {TSX.Element}
- * */
 function UserInfo({ label, value }: UserInfoProps) {
   return (
     <div className={"space-y-1"}>
@@ -36,13 +25,6 @@ function UserInfo({ label, value }: UserInfoProps) {
   );
 }
 
-/*
- * @User Interface
- * @param {string} name
- * @param {string} email
- * @param {string} phone
- * @return {TSX.Element}
- * */
 interface User {
   name: string;
   email: string;

@@ -6,11 +6,6 @@ import {
   GetInstitutionsProps,
 } from "@/app/_actions/useProducts";
 
-/*
- * @Query get shops
- * @description Fetch shops
- * @return onSuccess {data: {status: string; data: any}}
- * */
 export const useGetInstitutions = ({
   page,
   per_page,
